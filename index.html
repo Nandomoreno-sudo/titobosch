@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tito Bosch | Fotógrafo de Moda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header con efecto "borroso" -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Tito Bosch">
+        </div>
+        <h1 class="title-blur">tito bosch</h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">about</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section con imagen de fondo y efecto scroll -->
+    <section class="hero">
+        <div class="hero-content">
+            <p>fotografía de moda — minimalismo y elegancia</p>
+        </div>
+    </section>
+
+    <!-- Portfolio (Grid con hover) -->
+    <section id="portfolio" class="portfolio">
+        <div class="grid">
+            <a href="img/portfolio1.jpg" class="portfolio-item" data-lightbox="portfolio">
+                <img src="img/portfolio1-thumb.jpg" alt="Fotografía 1">
+            </a>
+            <!-- Repetir para más imágenes -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Tito Bosch 2025 | Palma de Mallorca</p>
+    </footer>
+
+    <!-- Lightbox (hidden by default) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
