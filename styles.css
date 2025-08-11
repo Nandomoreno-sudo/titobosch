@@ -74,7 +74,7 @@ nav a:hover {
 /* Modifica la sección hero */
 .hero {
     height: 100vh;
-    background-image: url('images/Foto_1.JPG');
+    background-image: url('/images/Foto_1.JPG');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -176,4 +176,5 @@ footer {
 /* Efecto de scroll para hero */
 .scrolled .hero-content {
     opacity: 0;
+
 }
