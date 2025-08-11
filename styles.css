@@ -1,30 +1,19 @@
-/* styles.css */
-/* Reset global para eliminar márgenes y paddings predeterminados */
+/* Reset global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.logo img {
-    width: 150px;
-    height: auto;
-    transition: transform 0.3s;
-    margin-left: 80px;
-}
-.logo img:hover {
-    transform: scale(1.1);
-}
-
 /* Estilos generales */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    margin: 0;
-    background: #dfdede;
+    background: #f5f5f5;
     color: #000;
+    line-height: 1.6;
 }
 
-/* Header con efecto de desenfoque */
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -35,133 +24,145 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 100px;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
+.logo img {
+    display: none;
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.home-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+}
+
+/* Título con efecto desenfocado/pixelado */
 .title-blur {
     color: white;
     font-size: 3rem;
-    letter-spacing: 8px;
-    filter: blur(0.5px);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-    opacity: 0.9;
+    letter-spacing: 6px;
     text-transform: lowercase;
+    font-weight: 300;
+    margin: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    /* Efecto de desenfoque avanzado */
+    filter: blur(0.8px) contrast(1.2);
+    text-shadow: 
+        0 0 1px rgba(255,255,255,0.4),
+        0 0 3px rgba(255,255,255,0.3),
+        0 0 5px rgba(255,255,255,0.2),
+        0 0 7px rgba(255,255,255,0.1);
+    position: relative;
+    opacity: 0.92;
 }
 
+/* Efecto de grano digital (opcional) */
+.title-blur::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: 
+        radial-gradient(circle at center, 
+            rgba(255,255,255,0.03) 0%, 
+            transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+nav {
+    margin-left: auto;
+}
 
 nav ul {
     display: flex;
     gap: 30px;
     list-style: none;
-    margin-left: auto;
-    margin-right: 80px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
 
 nav a:hover {
     color: #ccc;
 }
 
+nav a.active {
+    font-weight: 500;
+    border-bottom: 1px solid white;
+}
 
-
-/* Modifica la sección hero */
+/* Hero Section */
 .hero {
     height: 100vh;
-    background-image: url('/images/Foto_1.JPG');
-    background-size: cover;
-    background-position: center;
+    background: url('images/Foto_1.JPG') no-repeat center center/cover;
+    margin-top: 100px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    position: relative;
-    margin-top: 120px;
-    overflow: hidden; /* Asegura que el pseudo-elemento no se salga */
-    padding-top: 120px;
-}
-    .hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 0;
-}
-
-
-.hero-content {
-    color: #ccc;
-    text-align: center;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
-    opacity: 1;
-    transition: opacity 0.5s;
-    font-size: 2rem;
-    letter-spacing: 2px;
 }
 
 /* Portfolio Grid */
 .portfolio {
-    padding: 100px 40px;
-    background: #dfdede;
+    padding: 80px 40px;
+    background: #fff;
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .portfolio-item {
     overflow: hidden;
-    transition: transform 0.3s;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    aspect-ratio: 2/3;
 }
 
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s;
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.05);
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.portfolio-img {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    text-align: center;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
 }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
-    margin-top: 5%;
+.portfolio-item:hover {
+    transform: scale(1.02);
 }
 
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -169,12 +170,143 @@ footer {
     background: #000;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
-/* Efecto de scroll para hero */
-.scrolled .hero-content {
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
     opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
 
+.home-link:hover .tooltip {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header {
+        height: 80px;
+        padding: 0 20px;
+    }
+    
+    .title-blur {
+        font-size: 2.5rem;
+        filter: blur(0.6px) contrast(1.1);
+    }
+    
+    nav a {
+        font-size: 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .home-link {
+        position: static;
+        transform: none;
+        order: 2;
+        margin: 10px 0;
+    }
+    
+    .title-blur {
+        font-size: 2.2rem;
+        white-space: normal;
+        filter: blur(0.5px) contrast(1.05);
+        text-align: center;
+    }
+    
+    nav {
+        margin-left: 0;
+        order: 3;
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    /* Hero fix para móvil */
+    .hero {
+        margin-top: 140px;
+        height: 60vh;
+        background-attachment: scroll !important;
+        -webkit-background-size: cover;
+    }
+    
+    /* Fix para iOS/Safari */
+    @supports (-webkit-touch-callout: none) {
+        .hero {
+            background-attachment: initial !important;
+        }
+    }
+    
+    .portfolio {
+        padding: 60px 20px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .title-blur {
+        font-size: 2rem;
+        filter: blur(0.4px);
+    }
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero {
+        height: 50vh;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos específicos para about */
+.about-page {
+    padding: 150px 40px 80px;
+    min-height: calc(100vh - 120px);
+    background: #DFDEDE;
+    margin-top: 120px;
+}
+
+/* Estilos específicos para contacto */
+.contact-page {
+    padding: 150px 40px;
+    min-height: calc(100vh - 120px);
+    background: #f5f5f5;
+    margin-top: 120px;
 }

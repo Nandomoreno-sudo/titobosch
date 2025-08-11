@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tito Bosch | Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <style>
+        /* Estilos específicos para contacto */
+        .contact-page {
+            padding: 60px 40px; /* Reduje el padding superior de 150px a 60px */
+            min-height: calc(100vh - 120px);
+            background: #f5f5f5;
+            margin-top: 80px; /* Cambiado de 120px a 80px */
+        }
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .contact-title {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 80px;
+            text-transform: lowercase;
+            color: #000;
+        }
+        
+        .contact-method {
+            margin-bottom: 30px;
+        }
+        
+        .contact-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .contact-value {
+            font-size: 1.2rem;
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-value:hover {
+            color: #888;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Tito Bosch">
+        </div>
+        
+        <a href="index.html" class="home-link">
+            <h1 class="title-blur" title="Home">
+                tito bosch
+            </h1>
+            <span class="tooltip">Home</span>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="about.html">about</a></li>
+                <li><a href="index.html">portfolio</a></li>
+                <li><a href="contact.html" class="active">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página de Contacto -->
+    <main class="contact-page">
+        <div class="contact-container">
+            <!-- Información de contacto -->
+            <div class="contact-info">
+                <h2 class="contact-title">contacto</h2>
+                
+                <div class="contact-method">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:hola@titobosch.com" class="contact-value">hola@titobosch.com</a>
+                </div>
+                
+                <div class="contact-method">
+                    <span class="contact-label">Teléfono</span>
+                    <a href="tel:+34666555444" class="contact-value">+34 666 555 444</a>
+                </div>
+                
+                <div class="contact-method">
+                    <span class="contact-label">Estudio</span>
+                    <span class="contact-value">Calle de la Fotografía, 23<br>Palma de Mallorca</span>
+                </div>
+                
+                <div class="contact-method">
+                    <span class="contact-label">Redes Sociales</span>
+                    <div class="social-links">
+                        <a href="https://instagram.com/titobosch" class="contact-value" target="_blank">Instagram</a><br>
+                        <a href="https://vimeo.com/titobosch" class="contact-value" target="_blank">Vimeo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formulario de contacto -->
+            <div class="contact-form">
+                <form action="https://formsubmit.co/hola@titobosch.com" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_next" value="https://titobosch.com/gracias.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <button type="submit" class="submit-btn">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Tito Bosch 2025 | Palma de Mallorca</p>
+    </footer>
+</body>
+</html>

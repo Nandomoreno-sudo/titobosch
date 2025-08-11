@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tito Bosch | About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <style>
+        /* Estilos específicos para about */
+        .about-page {
+            padding: 60px 40px; /* Reduje el padding superior de 150px a 60px */
+            min-height: calc(100vh - 120px);
+            background: #f5f5f5;
+            margin-top: 80px; /* Cambiado de 120px a 80px */
+        }
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .about-image-container {
+            width: 350px;
+            float: left;
+            margin-right: 60px;
+            margin-bottom: 20px;
+            shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .about-image {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+            border-radius: 2px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        
+        .about-image:hover {
+            filter: grayscale(0%);
+        }
+        
+        .about-content {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .about-title {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: lowercase;
+            color: #000;
+            font-weight: 300;
+            padding-top: 0;
+        }
+        
+        .about-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .text-after-image {
+            clear: both;
+            padding-top: 20px;
+        }
+        
+        .highlight-text {
+            font-weight: 500;
+            color: #000;
+        }
+        
+        .signature {
+            font-family: 'Georgia', serif;
+            font-size: 2.4rem;
+            font-style: italic;
+            color: #000;
+            margin-top: 50px;
+            display: inline-block;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-image-container {
+                float: none;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto 40px;
+                display: block;
+            }
+            
+            .about-title {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+            
+            .about-subtitle {
+                text-align: center;
+            }
+            
+            .text-after-image {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Tito Bosch">
+        </div>
+        
+        <a href="index.html" class="home-link">
+            <h1 class="title-blur" title="Home">
+                tito bosch
+            </h1>
+            <span class="tooltip">Home</span>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="about.html" class="active">about</a></li>
+                <li><a href="index.html">portfolio</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página About -->
+    <main class="about-page">
+        <div class="about-container">
+            <div class="about-image-container">
+                <img src="images/Foto_3.1.jpeg" alt="Tito Bosch" class="about-image">
+            </div>
+            
+            <div class="about-content">
+                <h2 class="about-title">tito bosch</h2>
+                <h3 class="about-subtitle">Fotógrafo y Productor Profesional</h3>
+                
+                <p class="about-text">
+                    Fotógrafo profesional mallorquín con madre inglesa (inglés nativo). Empecé en la fotografía a los 13 años por hobby gracias a heredar la cámara de mi abuela. A los 20 años, después de muchos años divirtiéndome con la fotografía, comencé a hacer cursos en el <span class="highlight-text">CEF en Madrid</span>, que era el único centro en España especializado en Fotografía de Moda.
+                </p>
+                
+                <p class="about-text">
+                    Durante ese periodo trabajé en el conocido estudio fotográfico <span class="highlight-text">Ciclorama de Javier Vallhonrat</span>. Al regresar a Mallorca en los años 90, coincidí con el boom de grupos alemanes, ingleses y escandinavos que venían a la isla como locación fotográfica.
+                </p>
+                
+                <!-- Texto que aparece después que termina la imagen -->
+                <div class="text-after-image">
+                    <p class="about-text">
+                        Esto me permitió desarrollar un negocio paralelo a la fotografía en la <span class="highlight-text">producción fotográfica</span>, trabajando como asistente de fotógrafo y asistente de producción para empresas que iniciaban su negocio en este sector. Paralelamente, trabajé en el laboratorio <span class="highlight-text">Kodak The Lab</span> en Portals en revelado de diapositivas para estos clientes.
+                    </p>
+                    
+                    <p class="about-text">
+                        Monté mi primer estudio fotográfico en Portals, trasladándolo posteriormente a Llucmajor, lo que me permitió ampliar mis conocimientos en todo lo relacionado con el mundo de la publicidad y catálogo de moda.
+                    </p>
+                    
+                    <p class="about-text">
+                        Esta experiencia me ha aportado un <span class="highlight-text">conocimiento integral</span> tanto en la práctica fotográfica como en la dirección de sesiones de moda y trabajo en equipo. A lo largo de mi carrera he realizado retratos, fotografía deportiva, eventos, social, bodas, bautizos, catálogos de moda, hoteles, barcos y libros. Cada proyecto fotográfico ha representado un nuevo reto que he abordado con pasión.
+                    </p>
+                    
+                    <p class="about-text">
+                        Con <span class="highlight-text">más de 30 años de experiencia</span> en fotografía y producción fotográfica, estoy listo para afrontar nuevos encargos y desafíos creativos.
+                    </p>
+                    
+                    <div class="signature">Tito Bosch</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Tito Bosch 2025 | Palma de Mallorca</p>
+    </footer>
+</body>
+</html>
